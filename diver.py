@@ -229,7 +229,7 @@ class DivergentUniverse(UniverseUtils):
         time.sleep(1.5)
 
     def select_save(self):
-        self.click_position([186, 237 + int((self.saved_num-1) * (622 - 237) / 3)])
+        self.click_position([186, int((self.saved_num-1) * (572 - 180) / 3 + 240)])
         time.sleep(1)
         self.ts.forward(self.get_screen())
 
@@ -262,7 +262,7 @@ class DivergentUniverse(UniverseUtils):
         return None
     
     def find_team_member(self):
-        boxes = [[1620, 1790, 289, 335],[1620, 1790, 384, 427],[1620, 1790, 478, 521],[1620, 1790, 570, 618]]
+        boxes = [[1620, 1790, 290, 340],[1620, 1790, 382, 432],[1620, 1790, 476, 526],[1620, 1790, 570, 620]]
         team_member = {}
         for i,b in enumerate(boxes):
             name = self.clean_text(self.ts.ocr_one_row(self.get_screen(), b))
